@@ -9,10 +9,8 @@ colors:
 # per variable will be applied to the thresholds. If using with test-data you
 # can get around this 'update' restriction by adding the variable to your panel title.
 variableThresholdScalars:
-  site:
-    - {variableValuePattern: ".*Cicely.*", thresholdScalar: 2, cellIdPatternScope: [".*box.*"]}
   environment:
-    - {variableValuePattern: "dev", thresholdScalar: 0.2, cellIdPatternScope: [".*box.*"]}
+    - {variableValuePattern: "jenerator", thresholdScalar: 0.2, cellIdPatternScope: [".*jenerator.*", ".*eatonupstepesu.*"]}
 
 thresholds:
   queuecount:
