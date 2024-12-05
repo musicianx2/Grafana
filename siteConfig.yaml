@@ -1,10 +1,5 @@
-connections:
-  - from: "jenerator1tepesu"
-    to: "eatonupstepesu"
-    label: "Jeneratör 1 -> UPS 1"
-    color: "${cikis_voltaj{instance='jenerator1tepesu'} > 200 ? 'blue' : 'red'}"
-
-  - from: "jenerator2tepesu"
-    to: "eatonups2tepesu"
-    label: "Jeneratör 2 -> UPS 2"
-    color: "${cikis_voltaj{instance='jenerator2tepesu'} > 200 ? 'blue' : 'red'}"
+site:
+  name: "Sistem Odası İzleme Paneli"
+  svg: "sistemodasi.drawio.svg"
+  panels:
+    - file: "panelConfig.yaml"

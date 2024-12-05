@@ -1,25 +1,78 @@
-flowchart:
-  nodes:
-    - id: "jenerator1tepesu"
-      label: "Jeneratör 1"
-      description: "Çıkış Voltajı: ${cikis_voltaj{instance='jenerator1tepesu'}} V"
-      color: "${cikis_voltaj{instance='jenerator1tepesu'} > 200 ? 'green' : 'red'}"
+panels:
+  - name: "Jenerator 1 Çıkış Voltajı"
+    selector: '[id="jenerator1"]'
+    query: 'cikis_voltaj{instance="jenerator1tepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
+  
+  - name: "Jenerator 2 Çıkış Voltajı"
+    selector: '[id="jenerator2"]'
+    query: 'cikis_voltaj{instance="jenerator2tepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
 
-    - id: "jenerator2tepesu"
-      label: "Jeneratör 2"
-      description: "Çıkış Voltajı: ${cikis_voltaj{instance='jenerator2tepesu'}} V"
-      color: "${cikis_voltaj{instance='jenerator2tepesu'} > 200 ? 'green' : 'red'}"
+  - name: "Eaton UPS 1 Çıkış Voltajı"
+    selector: '[id="eatonups1-cikis"]'
+    query: 'cikis_voltaj{instance="eatonupstepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
 
-    - id: "eatonupstepesu"
-      label: "Eaton UPS 1"
-      description: |
-        Çıkış Voltajı: ${cikis_voltaj{instance='eatonupstepesu'}} V
-        Giriş Voltajı: ${giris_voltaj{instance='eatonupstepesu'}} V
-      color: "${cikis_voltaj{instance='eatonupstepesu'} > 200 && giris_voltaj{instance='eatonupstepesu'} > 200 ? 'green' : 'red'}"
+  - name: "Eaton UPS 1 Giriş Voltajı"
+    selector: '[id="eatonups1-giris"]'
+    query: 'giris_voltaj{instance="eatonupstepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
 
-    - id: "eatonups2tepesu"
-      label: "Eaton UPS 2"
-      description: |
-        Çıkış Voltajı: ${cikis_voltaj{instance='eatonups2tepesu'}} V
-        Giriş Voltajı: ${giris_voltaj{instance='eatonups2tepesu'}} V
-      color: "${cikis_voltaj{instance='eatonups2tepesu'} > 200 && giris_voltaj{instance='eatonups2tepesu'} > 200 ? 'green' : 'red'}"
+  - name: "Eaton UPS 2 Çıkış Voltajı"
+    selector: '[id="eatonups2-cikis"]'
+    query: 'cikis_voltaj{instance="eatonups2tepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
+
+  - name: "Eaton UPS 2 Giriş Voltajı"
+    selector: '[id="eatonups2-giris"]'
+    query: 'giris_voltaj{instance="eatonups2tepesu"}'
+    type: "gauge"
+    thresholds:
+      - value: 200
+        color: "red"
+      - value: 220
+        color: "yellow"
+      - value: 240
+        color: "green"
+    unit: "V"
