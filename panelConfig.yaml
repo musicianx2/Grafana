@@ -2,7 +2,7 @@ flowchart:
   nodes:
     - id: "jenerator1"
       label: "Jenerator 1"
-      description: "Çıkış Voltaj: cikis_voltaj{instance='jenerator1tepesu'} V"
+      description: "Çıkış Voltaj: cikis_voltaj{instance='jenerator1tepesu'}"
       x: 150
       y: 200
       style:
