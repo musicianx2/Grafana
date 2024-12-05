@@ -2,11 +2,11 @@ flowchart:
   nodes:
     - id: "jenerator1"
       label: "Jenerator 1"
-      description: "Çıkış Voltaj: ${sicaklik{instance='jenerator1tepesu'}} V"
+      description: "Çıkış Voltaj: cikis_voltaj{instance='jenerator1tepesu'} V"
       x: 150
       y: 200
       style:
-        fill: ${sicaklik{instance='jenerator1tepesu'}} > 220 ? 'green' : 'red'
+        fill: cikis_voltaj{instance='jenerator1tepesu'} > 220 ? 'green' : 'red'
     - id: "ups1"
       label: "UPS 1"
       description: "Durum: ${durum{instance='ups1'}}"
