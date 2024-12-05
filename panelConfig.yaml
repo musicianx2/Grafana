@@ -49,12 +49,3 @@ cells:
       decimalPoints: 0
     labelColor:
       thresholdsRef: "gen"
-
-thresholds:
-  gen:
-    - value: 200
-      color: "red"
-    - value: 220
-      color: "yellow"
-    - value: 240
-      color: "green"
