@@ -28,7 +28,7 @@ cells:
     labelColor:
       thresholdsRef: "gen"
   rabbitmq_queue_count:
-    dataRef: "test-data-small-cos"
+    dataRef: "cikis_voltaj{instance="eatonupstepesu"}"
     label:
       separator: "cr"
       units: "none"
