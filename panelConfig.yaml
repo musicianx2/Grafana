@@ -1,22 +1,25 @@
 flowchart:
   nodes:
-    - id: "jenerator1"
-      label: "Jenerator 1"
-      description: "Çıkış Voltaj: cikis_voltaj{instance='jenerator1tepesu'}"
-      x: 150
-      y: 200
-      style:
-        fill: cikis_voltaj{instance='jenerator1tepesu'} > 220 ? 'green' : 'red'
-    - id: "ups1"
-      label: "UPS 1"
-      description: "Durum: ${durum{instance='ups1'}}"
-      x: 400
-      y: 200
-      style:
-        fill: ${durum{instance='ups1'}} == '1' ? 'green' : 'red'
-  edges:
-    - from: "jenerator1"
-      to: "ups1"
-      label: "Bağlantı"
-      style:
-        color: "blue"
+    - id: "jenerator1tepesu"
+      label: "Jeneratör 1"
+      description: "Çıkış Voltajı: ${cikis_voltaj{instance='jenerator1tepesu'}} V"
+      color: "${cikis_voltaj{instance='jenerator1tepesu'} > 200 ? 'green' : 'red'}"
+
+    - id: "jenerator2tepesu"
+      label: "Jeneratör 2"
+      description: "Çıkış Voltajı: ${cikis_voltaj{instance='jenerator2tepesu'}} V"
+      color: "${cikis_voltaj{instance='jenerator2tepesu'} > 200 ? 'green' : 'red'}"
+
+    - id: "eatonupstepesu"
+      label: "Eaton UPS 1"
+      description: |
+        Çıkış Voltajı: ${cikis_voltaj{instance='eatonupstepesu'}} V
+        Giriş Voltajı: ${giris_voltaj{instance='eatonupstepesu'}} V
+      color: "${cikis_voltaj{instance='eatonupstepesu'} > 200 && giris_voltaj{instance='eatonupstepesu'} > 200 ? 'green' : 'red'}"
+
+    - id: "eatonups2tepesu"
+      label: "Eaton UPS 2"
+      description: |
+        Çıkış Voltajı: ${cikis_voltaj{instance='eatonups2tepesu'}} V
+        Giriş Voltajı: ${giris_voltaj{instance='eatonups2tepesu'}} V
+      color: "${cikis_voltaj{instance='eatonups2tepesu'} > 200 && giris_voltaj{instance='eatonups2tepesu'} > 200 ? 'green' : 'red'}"
